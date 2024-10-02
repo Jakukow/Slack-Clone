@@ -1,7 +1,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -10,13 +9,17 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useCreateWorkspace } from "../api/use-create-workspaces";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export const CreateWorkspaceModal = () => {
+  const router = useRouter();
   const [open, setOpen] = useCreateWorkspaceModal();
   const [name, setName] = useState("");
 
   const handleClose = () => {
     setOpen(false);
+    setName("");
   };
   const { mutate, isPending } = useCreateWorkspace();
 
@@ -26,7 +29,9 @@ export const CreateWorkspaceModal = () => {
       { name },
       {
         onSuccess(data) {
-          console.log(data);
+          toast.success("Workspace created");
+          router.push(`/workspace/${data}`);
+          handleClose();
         },
       }
     );

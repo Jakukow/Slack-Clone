@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#202946;}
+	.st1{fill:#ED7012;}
+	.st2{opacity:0.4;fill:#ED7012;}
+	.st3{fill:url(#SVGID_1_);}
+	.st4{opacity:0.4;fill:url(#SVGID_2_);}
+	.st5{fill:#00FFFA;}
+	.st6{opacity:0.4;}
+	.st7{fill:url(#SVGID_3_);}
+	.st8{opacity:0.4;fill:url(#SVGID_4_);}
+	.st9{fill:url(#SVGID_5_);}
+	.st10{opacity:0.4;fill:#00FFFA;}
+	.st11{opacity:0.4;fill:url(#SVGID_6_);}
+	.st12{fill:#F72585;}
+	.st13{opacity:0.4;fill:#F72585;}
+	.st14{fill:url(#SVGID_7_);}
+	.st15{opacity:0.4;fill:url(#SVGID_8_);}
+	.st16{fill:url(#SVGID_9_);}
+	.st17{opacity:0.4;fill:url(#SVGID_10_);}
+	.st18{fill:url(#SVGID_11_);}
+	.st19{opacity:0.4;fill:url(#SVGID_12_);}
+	.st20{fill:url(#SVGID_13_);}
+	.st21{fill:url(#SVGID_14_);}
+	.st22{fill:url(#SVGID_15_);}
+	.st23{fill:url(#SVGID_16_);}
+	.st24{fill:url(#SVGID_17_);}
+	.st25{opacity:0.4;fill:url(#SVGID_18_);}
+	.st26{fill:url(#SVGID_19_);}
+	.st27{opacity:0.4;fill:url(#SVGID_20_);}
+	.st28{fill:url(#SVGID_21_);}
+	.st29{opacity:0.4;fill:url(#SVGID_22_);}
+	.st30{fill:url(#SVGID_23_);}
+	.st31{fill:#AD1E6D;}
+	.st32{opacity:0.4;fill:url(#SVGID_24_);}
+	.st33{fill:url(#SVGID_25_);}
+	.st34{opacity:0.4;fill:url(#SVGID_26_);}
+</style>
+<g id="Warstwa_2">
+	<g>
+		<g>
+			<g>
+				<g>
+					<path class="st5" d="M554.6,44.7L554.6,44.7L48,551.3V399.6c0-40.4,16-79.1,44.5-107.8L338.2,45
+						C397.9-14.9,494.8-15,554.6,44.7z"/>
+				</g>
+				<path class="st5" d="M295.1,582.4l-108-108l-108,108l108,108l0,0c59.6,59.6,156.3,59.6,215.9,0l290.6-290.6l108,108l108-108
+					l-108-108l0,0c-59.6-59.6-156.3-59.6-215.9,0L295.1,582.4z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g class="st6">
+					<polygon class="st5" points="48,551.3 48,597.9 577.9,68.1 554.6,44.7 					"/>
+				</g>
+				<g class="st6">
+					<path class="st5" d="M801.6,507.8l-108-108L403.1,690.4c-59.6,59.6-156.3,59.6-215.9,0l0,0l-108-108l-15.6,15.6l123.5,123.5
+						l0,0c59.6,59.6,156.3,59.6,215.9,0l290.6-290.6l108,108l123.5-123.5l-15.6-15.6L801.6,507.8z"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="969.6488" y1="510.5858" x2="273.2809" y2="1206.9537">
+				<stop  offset="5.775291e-02" style="stop-color:#7012ED"/>
+				<stop  offset="0.539" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			</linearGradient>
+			<path class="st3" d="M434.5,937.7L434.5,937.7L941,431.2l0,151.6c0,40.4-16,79.1-44.5,107.8L650.8,937.5
+				C591.2,997.4,494.2,997.5,434.5,937.7z"/>
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="995.0739" y1="502.6964" x2="274.5976" y2="1223.1726">
+				<stop  offset="5.775291e-02" style="stop-color:#7012ED"/>
+				<stop  offset="0.539" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			</linearGradient>
+			<path class="st4" d="M941,431.2l0,151.6c0,40.4-16,79.1-44.5,107.8L650.8,937.5c-53.7,53.9-137.5,59.4-197.3,16.3l-1.4,1.4v0
+				c59.8,59.8,156.7,59.6,216.3-0.2L914,708.2c28.5-28.6,44.5-67.4,44.5-107.8V413.7L941,431.2z"/>
+		</g>
+	</g>
+</g>
+<g id="Warstwa_3">
+</g>
+</svg>

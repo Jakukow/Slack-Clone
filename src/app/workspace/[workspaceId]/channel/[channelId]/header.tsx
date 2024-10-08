@@ -26,7 +26,7 @@ import { useUpdateChannel } from "@/features/channels/api/use-update-channel";
 import { useRemoveChannel } from "@/features/channels/api/use-remove-channel";
 
 interface HeaderProps {
-  title: string;
+  title: string | undefined;
 }
 
 export const Header = ({ title }: HeaderProps) => {

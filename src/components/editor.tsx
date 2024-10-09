@@ -63,30 +63,33 @@ const Editor = ({
     if (!containerRef.current) return;
 
     const container = containerRef.current;
-    const editContainer = container.appendChild(
+    const editorContainer = container.appendChild(
       container.ownerDocument.createElement("div")
     );
+
     const options: QuillOptions = {
       theme: "snow",
       placeholder: placeholderRef.current,
       modules: {
         toolbar: [
-          ["bold", "italic", "strike"],
-          ["link"],
+          ["bold", "italic", "underline", "strike"],
           [{ list: "ordered" }, { list: "bullet" }],
+          ["link", "clean"],
         ],
-
-        keyboad: {
+        keyboard: {
           bindings: {
             enter: {
               key: "Enter",
               handler: () => {
                 const text = quill.getText();
                 const addedImage = imageElementRef.current?.files?.[0] || null;
+
                 const isEmpty =
                   !addedImage &&
                   text.replace(/<(.|\n)*?>/g, "").trim().length === 0;
+
                 if (isEmpty) return;
+
                 const body = JSON.stringify(quill.getContents());
                 sumbitRef.current?.({ body, image: addedImage });
               },
@@ -102,13 +105,15 @@ const Editor = ({
         },
       },
     };
-    const quill = new Quill(editContainer, options);
+
+    const quill = new Quill(editorContainer, options);
     quilRef.current = quill;
     quilRef.current.focus();
 
     if (innerRef) {
       innerRef.current = quill;
     }
+
     quill.setContents(defaultValueRef.current);
     setText(quill.getText());
 
@@ -118,6 +123,7 @@ const Editor = ({
 
     return () => {
       quill.off(Quill.events.TEXT_CHANGE);
+
       if (container) {
         container.innerHTML = "";
       }
@@ -129,7 +135,6 @@ const Editor = ({
       }
     };
   }, [innerRef]);
-
   const toggleToolbar = () => {
     setIsToolbarVisible((current) => !current);
     const toolbarElement = containerRef.current?.querySelector(".ql-toolbar");
@@ -241,18 +246,18 @@ const Editor = ({
           {variant === "create" && (
             <Button
               disabled={disabled || isEmpty}
-              onClick={() =>
+              onClick={() => {
                 onSubmit({
                   body: JSON.stringify(quilRef.current?.getContents()),
                   image,
-                })
-              }
+                });
+              }}
               size="iconSm"
               className={cn(
                 "ml-auto",
                 isEmpty
-                  ? " bg-white hover:bg-white text-muted-foreground"
-                  : " bg-[#007a5a] hover:[#007a5a]/80 text-white"
+                  ? "bg-white text-muted-foreground hover:bg-white"
+                  : "bg-[#007A5A] text-white hover:bg-[#007A5A]/80"
               )}
             >
               <MdSend className="size-4" />

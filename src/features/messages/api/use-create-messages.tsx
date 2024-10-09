@@ -8,7 +8,8 @@ type ReqestType = {
   image?: Id<"_storage">;
   workspaceId: Id<"workspaces">;
   channelId?: Id<"channels">;
-  parenMessageId?: Id<"messages">;
+  parentMessageId?: Id<"messages">;
+  conversationId?: Id<"conversations">;
 };
 type ResponseType = Id<"messages"> | null;
 

@@ -1,12 +1,16 @@
-import { GetMessagesReturnType } from "@/features/messages/api/use-get-messages";
+import { useState } from "react";
+import { Loader } from "lucide-react";
 import { differenceInMinutes, format, isToday, isYesterday } from "date-fns";
+
 import { Message } from "./message";
 import { ChannelHero } from "./channel-hero";
-import { useState } from "react";
-import { Id } from "../../convex/_generated/dataModel";
+
 import { useWorkspaceId } from "@/hooks/use-workspace-id";
+import { GetMessagesReturnType } from "@/features/messages/api/use-get-messages";
 import { useCurrentMember } from "@/features/members/api/use-current-member";
-import { Loader } from "lucide-react";
+
+import { Id } from "../../convex/_generated/dataModel";
+import { ConversationHero } from "./conversation-hero";
 
 const TIME_THRESHOLD = 5;
 
@@ -22,7 +26,15 @@ interface MessageListProps {
   canLoadMore: boolean;
 }
 
+const formatDateLabel = (dateStr: string) => {
+  const date = new Date(dateStr);
+  if (isToday(date)) return "Today";
+  if (isYesterday(date)) return "Yesterday";
+  return format(date, "EEEE, MMMM d");
+};
+
 export const MessageList = ({
+  memberName,
   memberImage,
   channelName,
   channelCreationTime,
@@ -36,13 +48,6 @@ export const MessageList = ({
   const { data: currentMember } = useCurrentMember({ workspaceId });
   const [editingId, setEditingId] = useState<Id<"messages"> | null>(null);
 
-  const formatDateLabel = (dateStr: string) => {
-    const date = new Date(dateStr);
-    if (isToday(date)) return "Today";
-    if (isYesterday(date)) return "Yesterday";
-    return format(date, "EEEE, MMMM d");
-  };
-
   const groupedMessages = data?.reduce(
     (groups, message) => {
       const date = new Date(message._creationTime);
@@ -55,6 +60,7 @@ export const MessageList = ({
     },
     {} as Record<string, typeof data>
   );
+
   return (
     <div className="flex-1 flex flex-col-reverse pb-4 overflow-y-auto messages-scrollbar">
       {Object.entries(groupedMessages || {}).map(([dateKey, messages]) => (
@@ -74,6 +80,7 @@ export const MessageList = ({
                 new Date(message._creationTime),
                 new Date(prevMessage._creationTime)
               ) < TIME_THRESHOLD;
+
             return (
               <Message
                 key={message._id}
@@ -100,6 +107,7 @@ export const MessageList = ({
           })}
         </div>
       ))}
+
       <div
         className="h-1"
         ref={(el) => {
@@ -127,6 +135,9 @@ export const MessageList = ({
       )}
       {variant === "channel" && channelName && channelCreationTime && (
         <ChannelHero name={channelName} creationTime={channelCreationTime} />
+      )}
+      {variant === "conversation" && (
+        <ConversationHero name={memberName} image={memberImage} />
       )}
     </div>
   );

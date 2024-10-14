@@ -142,9 +142,9 @@ const Editor = ({
       toolbarElement.classList.toggle("hidden");
     }
   };
-  const onEmojiSelect = (emoji: unknown) => {
+  const onEmojiSelect = (emojiValue: string) => {
     const quill = quilRef.current;
-    quill?.insertText(quill.getSelection()?.index || 0, emoji.native);
+    quill?.insertText(quill.getSelection()?.index || 0, emojiValue);
   };
   const isEmpty = !image && text.replace(/<(.|\n)*?>/g, "").trim().length === 0;
 
